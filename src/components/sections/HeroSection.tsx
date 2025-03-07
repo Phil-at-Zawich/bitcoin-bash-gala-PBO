@@ -1,18 +1,12 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 md:px-8 overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1621794269359-cd9d01da56d7?q=80&w=2070&auto=format&fit=crop')",
-          filter: "brightness(0.2)"
-        }}
-      />
+  return <section className="relative min-h-screen flex items-center justify-center px-6 md:px-8 overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center z-0" style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1621794269359-cd9d01da56d7?q=80&w=2070&auto=format&fit=crop')",
+      filter: "brightness(0.2)"
+    }} />
       
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 z-10"></div>
       
@@ -27,9 +21,7 @@ const HeroSection = () => {
             <span className="block mt-1">Summit <span className="text-bitcoin">2024</span></span>
           </h1>
           
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 opacity-0 animate-fade-in stagger-3">
-            Join the world's most influential Bitcoin leaders, innovators, and visionaries for an exclusive summit in a historic city center.
-          </p>
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 opacity-0 animate-fade-in stagger-3">Join the world's most influential Bitcoin leaders, innovators, and visionaries for an exclusive summit in the historic Luxembourg City center.</p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-12 opacity-0 animate-fade-in stagger-4">
             <div className="flex items-center gap-2 px-4 py-3 bg-white/10 backdrop-blur-md rounded-full">
@@ -57,12 +49,10 @@ const HeroSection = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <a href="#about" className="text-white/70 hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
+            <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
