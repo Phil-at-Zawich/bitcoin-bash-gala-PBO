@@ -1,11 +1,9 @@
 
 import React, { useState } from 'react';
 import SectionTitle from '../SectionTitle';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
-import { Bitcoin, Loader2, CreditCard } from 'lucide-react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import FormContainer from './register/FormContainer';
+import BenefitsPanel from './register/BenefitsPanel';
 
 const RegisterSection = () => {
   const { toast } = useToast();
@@ -184,290 +182,23 @@ const RegisterSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3 fade-in-section">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="bg-bitcoin/90 p-8 text-white flex items-center gap-4">
-                <Bitcoin className="h-8 w-8" />
-                <h3 className="text-2xl font-display font-semibold">
-                  {currentStep === 'registration' ? 'Registration Form' : 'Payment Information'}
-                </h3>
-              </div>
-              
-              <Tabs 
-                defaultValue="registration" 
-                value={currentStep}
-                className="w-full"
-                onValueChange={(value) => setCurrentStep(value as 'registration' | 'payment')}
-              >
-                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-none border-b">
-                  <TabsTrigger value="registration" disabled={isSubmitting}>Registration</TabsTrigger>
-                  <TabsTrigger value="payment" disabled={isSubmitting}>Payment</TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="registration" className="p-0">
-                  <form onSubmit={handleRegistrationSubmit} className="p-8 space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="firstName" className="text-sm font-medium">
-                          First Name
-                        </label>
-                        <Input 
-                          id="firstName" 
-                          placeholder="Enter your first name" 
-                          required 
-                          className="h-12"
-                          value={formData.firstName}
-                          onChange={handleChange}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="lastName" className="text-sm font-medium">
-                          Last Name
-                        </label>
-                        <Input 
-                          id="lastName" 
-                          placeholder="Enter your last name" 
-                          required 
-                          className="h-12"
-                          value={formData.lastName}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email Address
-                      </label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="Enter your email address" 
-                        required 
-                        className="h-12"
-                        value={formData.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-medium">
-                        Company / Organization
-                      </label>
-                      <Input 
-                        id="company" 
-                        placeholder="Enter your company name" 
-                        required 
-                        className="h-12"
-                        value={formData.company}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="role" className="text-sm font-medium">
-                        Job Title
-                      </label>
-                      <Input 
-                        id="role" 
-                        placeholder="Enter your job title" 
-                        required 
-                        className="h-12"
-                        value={formData.role}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-bitcoin hover:bg-bitcoin/90 text-white h-12 text-base"
-                    >
-                      Continue to Payment
-                    </Button>
-                    
-                    <p className="text-center text-sm text-gray-500 mt-4">
-                      Due to limited capacity, all registrations are subject to approval. 
-                      You will be notified via email within 3 business days.
-                    </p>
-                  </form>
-                </TabsContent>
-                
-                <TabsContent value="payment" className="p-0">
-                  <form onSubmit={handlePaymentSubmit} className="p-8 space-y-6">
-                    <div className="space-y-2">
-                      <label htmlFor="cardName" className="text-sm font-medium">
-                        Cardholder Name
-                      </label>
-                      <Input 
-                        id="cardName" 
-                        placeholder="Name on card" 
-                        required 
-                        className="h-12"
-                        value={paymentData.cardName}
-                        onChange={handlePaymentChange}
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="cardNumber" className="text-sm font-medium">
-                        Card Number
-                      </label>
-                      <Input 
-                        id="cardNumber" 
-                        placeholder="1234 5678 9012 3456" 
-                        required 
-                        className="h-12"
-                        value={paymentData.cardNumber}
-                        onChange={(e) => {
-                          const formatted = formatCardNumber(e.target.value);
-                          setPaymentData(prev => ({
-                            ...prev,
-                            cardNumber: formatted
-                          }));
-                        }}
-                        maxLength={19}
-                      />
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label htmlFor="expiry" className="text-sm font-medium">
-                          Expiry Date
-                        </label>
-                        <Input 
-                          id="expiry" 
-                          placeholder="MM/YY" 
-                          required 
-                          className="h-12"
-                          value={paymentData.expiry}
-                          onChange={(e) => {
-                            const formatted = formatExpiry(e.target.value);
-                            setPaymentData(prev => ({
-                              ...prev,
-                              expiry: formatted
-                            }));
-                          }}
-                          maxLength={5}
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <label htmlFor="cvc" className="text-sm font-medium">
-                          CVC
-                        </label>
-                        <Input 
-                          id="cvc" 
-                          placeholder="123" 
-                          required 
-                          className="h-12"
-                          value={paymentData.cvc}
-                          onChange={handlePaymentChange}
-                          maxLength={3}
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="p-4 border border-bitcoin/20 rounded-lg bg-bitcoin/5 flex items-center justify-between">
-                      <p className="text-sm text-gray-700">
-                        <strong>Total:</strong> $2,950 USD
-                      </p>
-                      <p className="text-xs text-gray-500">Secure payment via Luma</p>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button 
-                        type="button" 
-                        variant="outline"
-                        className="flex-1"
-                        onClick={() => setCurrentStep('registration')}
-                        disabled={isSubmitting}
-                      >
-                        Back
-                      </Button>
-                      
-                      <Button 
-                        type="submit" 
-                        className="flex-1 bg-bitcoin hover:bg-bitcoin/90 text-white h-12 text-base"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Processing...
-                          </>
-                        ) : (
-                          <>
-                            <CreditCard className="mr-2 h-4 w-4" />
-                            Pay $2,950
-                          </>
-                        )}
-                      </Button>
-                    </div>
-                    
-                    <div className="text-center">
-                      <p className="text-xs text-gray-500 mt-4">
-                        Your payment is secured with industry-standard encryption.
-                        All payments are processed by Luma securely.
-                      </p>
-                    </div>
-                  </form>
-                </TabsContent>
-              </Tabs>
-            </div>
+            <FormContainer 
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+              formData={formData}
+              paymentData={paymentData}
+              handleChange={handleChange}
+              handlePaymentChange={handlePaymentChange}
+              handleRegistrationSubmit={handleRegistrationSubmit}
+              handlePaymentSubmit={handlePaymentSubmit}
+              formatCardNumber={formatCardNumber}
+              formatExpiry={formatExpiry}
+              isSubmitting={isSubmitting}
+            />
           </div>
           
           <div className="lg:col-span-2 fade-in-section">
-            <div className="bg-bitcoin/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold mb-6">Why Attend?</h3>
-              
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-bitcoin/20 w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-bitcoin font-medium">1</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Elite Networking</h4>
-                    <p className="text-gray-600">Connect with industry leaders and decision-makers</p>
-                  </div>
-                </li>
-                
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-bitcoin/20 w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-bitcoin font-medium">2</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Expert Insights</h4>
-                    <p className="text-gray-600">Gain valuable knowledge from renowned speakers</p>
-                  </div>
-                </li>
-                
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-bitcoin/20 w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-bitcoin font-medium">3</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Exclusive Experience</h4>
-                    <p className="text-gray-600">Enjoy luxury accommodations and premium events</p>
-                  </div>
-                </li>
-                
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-bitcoin/20 w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-bitcoin font-medium">4</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Future Opportunities</h4>
-                    <p className="text-gray-600">Discover partnerships and investment possibilities</p>
-                  </div>
-                </li>
-              </ul>
-              
-              <div className="mt-8 p-4 border border-bitcoin/20 rounded-lg bg-bitcoin/5">
-                <p className="text-sm text-gray-700">
-                  <strong>Registration Fee:</strong> $2,950 USD<br />
-                  Includes all sessions, workshops, meals, and networking events.
-                </p>
-              </div>
-            </div>
+            <BenefitsPanel />
           </div>
         </div>
       </div>
@@ -476,4 +207,3 @@ const RegisterSection = () => {
 };
 
 export default RegisterSection;
-
