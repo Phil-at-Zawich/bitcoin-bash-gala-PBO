@@ -1,25 +1,84 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../SectionTitle';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
-import { Bitcoin } from 'lucide-react';
+import { Bitcoin, Loader2 } from 'lucide-react';
 
 const RegisterSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    role: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Registration Request Submitted",
-      description: "We'll review your application and contact you shortly.",
-      duration: 5000,
-    });
-    
-    // Reset form
-    const form = e.target as HTMLFormElement;
-    form.reset();
+    setIsSubmitting(true);
+
+    try {
+      // Luma API integration
+      const response = await fetch('https://api.lu.ma/public/v1/event/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          event_id: 'evt-KiUfVdnFXANvuzc', // Replace with your actual Luma event ID
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          custom_fields: {
+            company: formData.company,
+            job_title: formData.role
+          }
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Registration Successful",
+          description: "You've been registered for The Ultimate Bitcoin Summit 2025. Check your email for confirmation.",
+          duration: 5000,
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          role: ''
+        });
+      } else {
+        throw new Error(data.message || 'Failed to register');
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast({
+        title: "Registration Failed",
+        description: error instanceof Error ? error.message : "Please try again later or contact support.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,6 +107,8 @@ const RegisterSection = () => {
                       placeholder="Enter your first name" 
                       required 
                       className="h-12"
+                      value={formData.firstName}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="space-y-2">
@@ -59,6 +120,8 @@ const RegisterSection = () => {
                       placeholder="Enter your last name" 
                       required 
                       className="h-12"
+                      value={formData.lastName}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -73,6 +136,8 @@ const RegisterSection = () => {
                     placeholder="Enter your email address" 
                     required 
                     className="h-12"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 
@@ -85,6 +150,8 @@ const RegisterSection = () => {
                     placeholder="Enter your company name" 
                     required 
                     className="h-12"
+                    value={formData.company}
+                    onChange={handleChange}
                   />
                 </div>
                 
@@ -97,16 +164,29 @@ const RegisterSection = () => {
                     placeholder="Enter your job title" 
                     required 
                     className="h-12"
+                    value={formData.role}
+                    onChange={handleChange}
                   />
                 </div>
                 
-                <Button type="submit" className="w-full bg-bitcoin hover:bg-bitcoin/90 text-white h-12 text-base">
-                  Submit Registration Request
+                <Button 
+                  type="submit" 
+                  className="w-full bg-bitcoin hover:bg-bitcoin/90 text-white h-12 text-base"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Register for the Summit"
+                  )}
                 </Button>
                 
                 <p className="text-center text-sm text-gray-500 mt-4">
                   Due to limited capacity, all registrations are subject to approval. 
-                  You will be notified within 3 business days.
+                  You will be notified via email within 3 business days.
                 </p>
               </form>
             </div>

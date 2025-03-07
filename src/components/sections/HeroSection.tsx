@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
+
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center px-6 md:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center z-0" style={{
@@ -36,12 +38,16 @@ const HeroSection = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in stagger-5">
-            <Button className="bg-bitcoin hover:bg-bitcoin/90 text-white rounded-full px-8 py-6 text-lg">
-              Register Now
-            </Button>
-            <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 rounded-full px-8 py-6 text-lg">
-              View Schedule
-            </Button>
+            <a href="#register">
+              <Button className="bg-bitcoin hover:bg-bitcoin/90 text-white rounded-full px-8 py-6 text-lg">
+                Register Now
+              </Button>
+            </a>
+            <a href="#schedule">
+              <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 rounded-full px-8 py-6 text-lg">
+                View Schedule
+              </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -55,4 +61,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;

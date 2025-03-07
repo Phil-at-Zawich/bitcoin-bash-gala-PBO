@@ -40,9 +40,11 @@ const Navbar = () => {
         </div>
         
         <div>
-          <Button className="bg-bitcoin hover:bg-bitcoin/90 text-white rounded-full px-6">
-            Register Now
-          </Button>
+          <a href="#register">
+            <Button className="bg-bitcoin hover:bg-bitcoin/90 text-white rounded-full px-6">
+              Register Now
+            </Button>
+          </a>
         </div>
       </div>
     </nav>
