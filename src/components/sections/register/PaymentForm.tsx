@@ -29,7 +29,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
   onBack,
 }) => {
   return (
-    <form onSubmit={onSubmit} className="p-8 space-y-6">
+    <form onSubmit={onSubmit} className="p-8 space-y-6" noValidate>
       <div className="space-y-2">
         <label htmlFor="cardName" className="text-sm font-medium">
           Cardholder Name

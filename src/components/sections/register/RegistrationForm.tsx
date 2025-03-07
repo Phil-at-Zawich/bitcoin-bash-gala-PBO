@@ -24,7 +24,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
   const { toast } = useToast();
 
   return (
-    <form onSubmit={onSubmit} className="p-8 space-y-6">
+    <form onSubmit={onSubmit} className="p-8 space-y-6" noValidate>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label htmlFor="firstName" className="text-sm font-medium">
