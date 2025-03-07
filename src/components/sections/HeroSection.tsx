@@ -26,12 +26,12 @@ const HeroSection = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-12 opacity-0 animate-fade-in stagger-4">
             <div className="flex items-center gap-2 px-4 py-3 bg-white/10 backdrop-blur-md rounded-full">
               <Calendar className="h-5 w-5 text-bitcoin" />
-              <span className="text-white">December 15-17, 2024</span>
+              <span className="text-white">May 14-16, 2025</span>
             </div>
             
             <div className="flex items-center gap-2 px-4 py-3 bg-white/10 backdrop-blur-md rounded-full">
               <MapPin className="h-5 w-5 text-bitcoin" />
-              <span className="text-white">Grand Palace Hotel, Historic City Center</span>
+              <span className="text-white">Grand Palace Hotel, Place d'Arme, Luxembourg</span>
             </div>
           </div>
           
