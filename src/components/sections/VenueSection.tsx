@@ -91,7 +91,7 @@ const VenueSection = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop"
+                  src="https://hotel-leplacedarmes.com/storage/medias/Home/0/31-placedarmes2-0040-retouche-2.webp"
                   alt="Hotel Restaurant"
                   className="w-full h-40 object-cover rounded-lg"
                 />

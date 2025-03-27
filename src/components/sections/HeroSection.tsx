@@ -25,8 +25,8 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 opacity-0 animate-fade-in stagger-2">
             <span className="block">The Ultimate Bitcoin</span>
             <span className="block mt-1">
-              Meetup
-              <span className="text-bitcoin">2024</span>
+              Event
+              <span className="text-bitcoin"> 2025</span>
             </span>
           </h1>
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
               <div className="flex items-center gap-2 px-4 py-3 bg-white/10 backdrop-blur-md rounded-full">
                 <MapPin className="h-5 w-5 text-bitcoin" />
                 <span className="text-white">
-                  Le Place d'Armes, Place d'Armes, Luxembourg
+                  Hôtel Le Place d'Armes, Luxembourg
                 </span>
               </div>
             </a>

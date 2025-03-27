@@ -42,8 +42,8 @@ const AboutSection = () => {
           <div className="fade-in-section">
             <p className="text-lg text-gray-700 mb-6">
               The Bitcoin Meetup Day brings together the brightest minds and
-              most influential figures in the Bitcoin ecosystem for three days
-              of insightful discussions, networking, and exclusive experiences.
+              most influential figures in the Bitcoin ecosystem of insightful
+              discussions, networking, and exclusive experiences.
             </p>
             <p className="text-lg text-gray-700 mb-8">
               Hosted in the luxurious{" "}
@@ -55,7 +55,7 @@ const AboutSection = () => {
               meaningful connections and groundbreaking collaborations.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3  gap-6">
               <div className="rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="rounded-full bg-bitcoin/10 w-12 h-12 flex items-center justify-center mb-4">
                   <Trophy className="h-6 w-6 text-bitcoin" />
@@ -66,7 +66,7 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all duration-300">
+              {/* <div className="rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="rounded-full bg-bitcoin/10 w-12 h-12 flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-bitcoin" />
                 </div>
@@ -74,7 +74,7 @@ const AboutSection = () => {
                 <p className="text-gray-600">
                   Limited to 200 distinguished attendees
                 </p>
-              </div>
+              </div> */}
 
               <div className="rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="rounded-full bg-bitcoin/10 w-12 h-12 flex items-center justify-center mb-4">
@@ -82,7 +82,19 @@ const AboutSection = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Premium Buffet</h3>
                 <p className="text-gray-600">
-                  Gourmet buffet and fine dining experience
+                  Gourmet buffet featuring exceptional Krug Champagne cuvées
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="rounded-full bg-bitcoin/10 w-12 h-12 flex items-center justify-center mb-4">
+                  <Utensils className="h-6 w-6 text-bitcoin" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">
+                  Exceptional Lunch
+                </h3>
+                <p className="text-gray-600">
+                  Gourmet buffet featuring exceptional Krug Champagne cuvées
                 </p>
               </div>
             </div>

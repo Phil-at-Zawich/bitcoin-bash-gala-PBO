@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bitcoin-meetup
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    environment:
+      - NODE_ENV=production
+    networks:
+      - bitcoin-network
+
+  bitcoinmeetup:
+    image: ticruz38/bitcoin_meetup:latest
+    ports:
+      - "3838:80"
+    restart: unless-stopped
+    container_name: "bitcoinmeetup"
+    networks:
+      - traefik-net
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.meetup.rule=Host(`bitcoinmeetupday.com`)"
+      - "traefik.http.routers.meetup.entrypoints=websecure"
+      - "traefik.http.routers.meetup.tls.certresolver=myresolver"
+
+networks:
+  bitcoin-network:
+    driver: bridge
