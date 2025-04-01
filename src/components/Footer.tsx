@@ -144,7 +144,7 @@ const Footer = () => {
                   info@bitcoinsummit.com
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <span className="block">Phone:</span>
                 <a
                   href="tel:+1234567890"
@@ -152,7 +152,7 @@ const Footer = () => {
                 >
                   +1 (234) 567-890
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

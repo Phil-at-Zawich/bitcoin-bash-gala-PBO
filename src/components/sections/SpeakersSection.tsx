@@ -46,9 +46,9 @@ const SpeakersSection = () => {
     {
       name: "Alexandra Chen",
       role: "Blockchain Strategist",
-      company: "BitFuture Capital",
+      company: "Asymkey",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop",
+        "https://asymkey.com/wp-content/uploads/2024/05/Asymkey_Logo_250x300px_Plan-de-travail-1-1-768x384.png",
     },
     {
       name: "Michael Reynolds",
