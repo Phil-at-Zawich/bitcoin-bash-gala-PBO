@@ -35,15 +35,13 @@ const AboutSection = () => {
       <div className="container mx-auto">
         <SectionTitle
           subtitle="About the Event"
-          title="The Premier Bitcoin Gathering of the Year"
+          title="The Premier Bitcoin Gathering of 2025"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="fade-in-section">
             <p className="text-lg text-gray-700 mb-6">
-              The Bitcoin Meetup Day brings together the brightest minds and
-              most influential figures in the Bitcoin ecosystem of insightful
-              discussions, networking, and exclusive experiences.
+              The Premier Bitcoin Gathering of the Year brings together the brightest minds and most influential figures in the Bitcoin ecosystem to engage in insightful discussions and forge new relatioships, all whilst sharing an exclusive experience.
             </p>
             <p className="text-lg text-gray-700 mb-8">
               Hosted in the luxurious{" "}

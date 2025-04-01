@@ -20,7 +20,7 @@ const VenueSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionTitle
-              subtitle="Luxury Accommodations"
+              subtitle="Luxury Accommodation"
               title="Experience the Historic Place d'Armes Hotel"
               alignment="left"
               className="text-white"
@@ -55,7 +55,7 @@ const VenueSection = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg">
-                      Luxurious Accommodations
+                      Luxury Accommodation
                     </h3>
                     <p className="text-white/80">
                       Elegant rooms and suites with premium amenities
@@ -84,20 +84,20 @@ const VenueSection = () => {
           <div className="fade-in-section">
             <div className="glass-panel p-6 backdrop-blur-lg bg-black/30 border border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop"
-                alt="Grand Palace Hotel Interior"
+                src="/images/hotel-exterior.jpg"
+                alt="Place d'Armes Hotel Exterior"
                 className="w-full h-auto rounded-lg mb-6"
               />
 
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://hotel-leplacedarmes.com/storage/medias/Home/0/31-placedarmes2-0040-retouche-2.webp"
-                  alt="Hotel Restaurant"
+                  src="/images/hotel-room.jpg"
+                  alt="Place d'Armes Hotel Room"
                   className="w-full h-40 object-cover rounded-lg"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1642614356666-ceb187e59a3d?q=80&w=2037&auto=format&fit=crop"
-                  alt="Hotel Exterior"
+                  src="/images/restaurant.jpg"
+                  alt="La Place Restaurant"
                   className="w-full h-40 object-cover rounded-lg"
                 />
               </div>

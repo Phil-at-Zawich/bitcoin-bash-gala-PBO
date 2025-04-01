@@ -153,13 +153,13 @@ const BenefitsPanel: React.FC = () => {
             <p className="text-sm text-gray-700 space-y-2">
               <strong className="block">Sponsorship Opportunities:</strong>
               <span className="block">
-                • Gold Sponsor: Premium placement and maximum visibility
+                • Platinum Sponsor: Premium placement and maximum visibility
               </span>
               <span className="block">
-                • Silver Sponsor: Enhanced brand presence
+                • Gold Sponsor: Enhanced brand presence
               </span>
               <span className="block">
-                • Bronze Sponsor: Standard visibility package
+                • Silver Sponsor: Standard visibility package
               </span>
               <span className="block text-xs mt-2">
                 Contact us for detailed sponsorship packages and pricing

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
@@ -24,7 +23,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 opacity-0 animate-fade-in stagger-2">
-            <span className="block">The Great Bitcoin</span>
+            <span className="block">The Ultimate Bitcoin</span>
             <span className="block mt-1">
               Event
               <span className="text-bitcoin"> 2025</span>

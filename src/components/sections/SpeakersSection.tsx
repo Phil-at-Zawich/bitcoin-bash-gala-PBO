@@ -24,17 +24,27 @@ const Speaker: React.FC<SpeakerProps> = ({
       style={{ animationDelay: `${delay * 100}ms` }}
     >
       <div className="h-64 overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-        />
+        {company === "Asymkey" ? (
+          <a href="https://asymkey.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+          </a>
+        ) : (
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          />
+        )}
       </div>
       <div className="p-6">
         {/* <h3 className="text-xl font-semibold mb-1">{name}</h3>
         <p className="text-gray-600 mb-2">{role}</p> */}
         <div className="flex items-center font-semibold text-bitcoin text-xl">
-          <span>{company}</span>
+          <span>{company === "Asymkey" ? "Your Host: Asymkey" : company}</span>
         </div>
       </div>
     </div>
@@ -51,40 +61,29 @@ const SpeakersSection = () => {
         "https://asymkey.com/wp-content/uploads/2024/05/Asymkey_Logo_250x300px_Plan-de-travail-1-1-768x384.png",
     },
     {
-      name: "Michael Reynolds",
-      role: "Chief Bitcoin Officer",
-      company: "Satoshi Ventures",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+      name: "Platinum Package",
+      role: "Premium Sponsorship",
+      company: "Platinum Package x1",
+      image: "",
     },
     {
-      name: "Sophia Williams",
-      role: "Bitcoin Researcher",
-      company: "Digital Asset Institute",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1922&auto=format&fit=crop",
+      name: "Gold Package",
+      role: "Premium Sponsorship",
+      company: "Gold Package x2",
+      image: "",
     },
     {
-      name: "Daniel Park",
-      role: "Lightning Network Developer",
-      company: "Voltage Labs",
-      image:
-        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974&auto=format&fit=crop",
+      name: "Silver Package",
+      role: "Premium Sponsorship",
+      company: "Silver Package x4",
+      image: "",
     },
     {
-      name: "Emma Thompson",
-      role: "Bitcoin Economist",
-      company: "Macro Trends Group",
-      image:
-        "https://images.unsplash.com/photo-1619085888250-b7691f3d5fe9?q=80&w=1974&auto=format&fit=crop",
-    },
-    {
-      name: "James Wilson",
-      role: "Security Expert",
-      company: "Cryptography Solutions",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-    },
+      name: "Bronze Package",
+      role: "Premium Sponsorship",
+      company: "Bronze Package x8",
+      image: "",
+    }
   ];
 
   return (
@@ -92,7 +91,7 @@ const SpeakersSection = () => {
       <div className="container mx-auto">
         <SectionTitle
           subtitle="World-Class Sponsors"
-          title="Meet Our Distinguished Sponsors"
+          title="Sponsorship Options"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
