@@ -41,10 +41,20 @@ const Speaker: React.FC<SpeakerProps> = ({
         )}
       </div>
       <div className="p-6">
-        {/* <h3 className="text-xl font-semibold mb-1">{name}</h3>
-        <p className="text-gray-600 mb-2">{role}</p> */}
-        <div className="flex items-center font-semibold text-bitcoin text-xl">
-          <span>{company === "Asymkey" ? "Your Host: Asymkey" : company}</span>
+        <div className="flex items-center justify-center min-h-[4rem]">
+          <span className={`font-bold text-2xl text-center ${
+            company === "Asymkey" 
+              ? "text-[#00A1DE]" // Luxembourg flag blue
+              : name.includes("Platinum") 
+                ? "text-[#B4B4B4]" // Darker platinum color
+                : name.includes("Gold") 
+                  ? "text-[#DAA520]" // Darker gold color
+                  : name.includes("Silver") 
+                    ? "text-[#C0C0C0]" // Silver color
+                    : "text-[#CD7F32]" // Bronze color
+          }`}>
+            {company === "Asymkey" ? "Your Host: Asymkey" : name}
+          </span>
         </div>
       </div>
     </div>
@@ -54,35 +64,35 @@ const Speaker: React.FC<SpeakerProps> = ({
 const SpeakersSection = () => {
   const speakers = [
     {
-      name: "Alexandra Chen",
-      role: "Blockchain Strategist",
+      name: "",
+      role: "",
       company: "Asymkey",
       image:
         "https://asymkey.com/wp-content/uploads/2024/05/Asymkey_Logo_250x300px_Plan-de-travail-1-1-768x384.png",
     },
     {
-      name: "Platinum Package",
+      name: "Platinum Package x1",
       role: "Premium Sponsorship",
-      company: "Platinum Package x1",
-      image: "",
+      company: "",
+      image: "/images/Bitcoin Token.jpg",
     },
     {
-      name: "Gold Package",
+      name: "Gold Package x2",
       role: "Premium Sponsorship",
-      company: "Gold Package x2",
-      image: "",
+      company: "",
+      image: "/images/Bitcoin Token.jpg",
     },
     {
-      name: "Silver Package",
+      name: "Silver Package x4",
       role: "Premium Sponsorship",
-      company: "Silver Package x4",
-      image: "",
+      company: "",
+      image: "/images/Bitcoin Token.jpg",
     },
     {
-      name: "Bronze Package",
+      name: "Bronze Package x8",
       role: "Premium Sponsorship",
-      company: "Bronze Package x8",
-      image: "",
+      company: "",
+      image: "/images/Bitcoin Token.jpg",
     }
   ];
 
