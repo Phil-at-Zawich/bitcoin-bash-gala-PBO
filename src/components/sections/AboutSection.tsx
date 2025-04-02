@@ -41,7 +41,10 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="fade-in-section">
             <p className="text-lg text-gray-700 mb-6">
-              The Premier Bitcoin Gathering of the Year brings together the brightest minds and most influential figures in the Bitcoin ecosystem to engage in insightful discussions and forge new relatioships, all whilst sharing an exclusive experience.
+              The Premier Bitcoin Gathering of the Year brings together the
+              brightest minds and most influential figures in the Bitcoin
+              ecosystem to engage in insightful discussions and forge new
+              relatioships, all whilst sharing an exclusive experience.
             </p>
             <p className="text-lg text-gray-700 mb-8">
               Hosted in the luxurious{" "}
@@ -101,9 +104,9 @@ const AboutSection = () => {
           <div className="fade-in-section relative">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1629867951513-12fd3b5ef5b3?q=80&w=2070&auto=format&fit=crop"
+                src="/gathering.jpg"
                 alt="Bitcoin Conference"
-                className="w-full h-auto object-cover"
+                className="w-full h-[70vh] object-cover rounded-lg"
               />
             </div>
             <div className="absolute -bottom-8 -right-8 rounded-xl overflow-hidden shadow-lg w-48 h-48 border-4 border-white hidden md:block">

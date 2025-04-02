@@ -5,16 +5,20 @@ import { Calendar, MapPin } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 md:px-8 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-20"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1621794269359-cd9d01da56d7?q=80&w=2070&auto=format&fit=crop')",
-          filter: "brightness(0.2)",
+          filter: "brightness(0.6)",
         }}
-      />
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10"></div>
 
       <div className="container mx-auto relative z-20 pt-24 pb-12 md:pt-32 md:pb-20">
         <div className="max-w-5xl mx-auto text-center">

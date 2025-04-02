@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Bitcoin } from "lucide-react";
+import GalaIcon from "@/components/icons/GalaIcon";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,8 +29,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <Bitcoin className="h-6 w-6 text-bitcoin animate-float" />
-          <span className="font-display text-xl font-medium text-white">
+          <GalaIcon className="h-6 w-6 animate-float" />
+          <span className="font-display text-xl font-medium text-bitcoin">
             Bitcoin Meetup Day
           </span>
         </div>
