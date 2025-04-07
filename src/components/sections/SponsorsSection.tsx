@@ -2,7 +2,7 @@ import React from "react";
 import SectionTitle from "../SectionTitle";
 import { User } from "lucide-react";
 
-interface SpeakerProps {
+interface SponsorProps {
   name: string;
   role: string;
   company: string;
@@ -11,7 +11,7 @@ interface SpeakerProps {
   delay: number;
 }
 
-const Speaker: React.FC<SpeakerProps> = ({
+const Sponsor: React.FC<SponsorProps> = ({
   name,
   span = 1,
   company,
@@ -23,9 +23,15 @@ const Speaker: React.FC<SpeakerProps> = ({
       className={`fade-in-section bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group col-span-${span}`}
       style={{ animationDelay: `${delay * 100}ms` }}
     >
-      <div className="h-64 overflow-hidden">
+      <div
+        className={`overflow-hidden  ${span === 3 ? "lg:h-[70vh] h-[50vh]" : span === 2 ? "h-76" : "h-64"}`}
+      >
         {company === "Asymkey" ? (
-          <a href="https://asymkey.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://asymkey.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src={image}
               alt={name}
@@ -42,17 +48,19 @@ const Speaker: React.FC<SpeakerProps> = ({
       </div>
       <div className="p-6">
         <div className="flex items-center justify-center min-h-[4rem]">
-          <span className={`font-bold text-2xl text-center ${
-            company === "Asymkey" 
-              ? "text-[#00A1DE]" // Luxembourg flag blue
-              : name.includes("Platinum") 
-                ? "text-[#B4B4B4]" // Darker platinum color
-                : name.includes("Gold") 
-                  ? "text-[#DAA520]" // Darker gold color
-                  : name.includes("Silver") 
-                    ? "text-[#C0C0C0]" // Silver color
-                    : "text-[#CD7F32]" // Bronze color
-          }`}>
+          <span
+            className={`font-bold text-2xl text-center ${
+              company === "Asymkey"
+                ? "text-[#00A1DE]" // Luxembourg flag blue
+                : name.includes("Platinum")
+                  ? "text-[#B4B4B4]" // Darker platinum color
+                  : name.includes("Gold")
+                    ? "text-[#DAA520]" // Darker gold color
+                    : name.includes("Silver")
+                      ? "text-[#C0C0C0]" // Silver color
+                      : "text-[#CD7F32]" // Bronze color
+            }`}
+          >
             {company === "Asymkey" ? "Your Host: Asymkey" : name}
           </span>
         </div>
@@ -61,18 +69,20 @@ const Speaker: React.FC<SpeakerProps> = ({
   );
 };
 
-const SpeakersSection = () => {
-  const speakers = [
+const SponsorsSection = () => {
+  const sponsors = [
     {
       name: "",
       role: "",
       company: "Asymkey",
+      span: 3,
       image:
         "https://asymkey.com/wp-content/uploads/2024/05/Asymkey_Logo_250x300px_Plan-de-travail-1-1-768x384.png",
     },
     {
       name: "Platinum Package x1",
       role: "Premium Sponsorship",
+      span: 3,
       company: "",
       image: "/images/Bitcoin Token.jpg",
     },
@@ -93,26 +103,23 @@ const SpeakersSection = () => {
       role: "Premium Sponsorship",
       company: "",
       image: "/images/Bitcoin Token.jpg",
-    }
+    },
   ];
 
   return (
-    <section id="speakers" className="section bg-gray-50">
+    <section id="sponsors" className="section bg-gray-50">
       <div className="container mx-auto">
-        <SectionTitle
-          subtitle="World-Class Sponsors"
-          title="Sponsorship Options"
-        />
+        <SectionTitle subtitle="World-Class Sponsors" title="Sponsors" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {speakers.map((speaker, index) => (
-            <Speaker
+          {sponsors.map((sponsor, index) => (
+            <Sponsor
               key={index}
-              name={speaker.name}
-              span={index == 1 ? 2 : 1}
-              role={speaker.role}
-              company={speaker.company}
-              image={speaker.image}
+              name={sponsor.name}
+              span={sponsor.span || 1}
+              role={sponsor.role}
+              company={sponsor.company}
+              image={sponsor.image}
               delay={(index % 3) + 1}
             />
           ))}
@@ -121,7 +128,7 @@ const SpeakersSection = () => {
         <div className="mt-16 text-center fade-in-section">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-bitcoin/10 text-bitcoin">
             <User className="h-4 w-4" />
-            <span className="font-medium">And 100+ more industry leaders</span>
+            <span className="font-medium">And 150+ more industry leaders</span>
           </div>
         </div>
       </div>
@@ -129,4 +136,4 @@ const SpeakersSection = () => {
   );
 };
 
-export default SpeakersSection;
+export default SponsorsSection;

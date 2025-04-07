@@ -54,7 +54,7 @@ const ScheduleSection = () => {
     //   { time: "12:45 - 14:00", title: "Lunch Break", description: "Networking lunch" },
     //   { time: "14:00 - 15:30", title: "Technical Deep Dive", description: "Smart Contracts on Bitcoin: Current and Future State" },
     //   { time: "15:45 - 17:00", title: "Investor Roundtable", description: "Bitcoin as an Investment: Strategies for the Future" },
-    //   { time: "19:00 - 22:00", title: "Gala Dinner", description: "Exclusive dining experience with special guest speaker" },
+    //   { time: "19:00 - 22:00", title: "Gala Dinner", description: "Exclusive dining experience with special guest sponsor" },
     // ],
     // day3: [
     //   { time: "09:00 - 10:00", title: "Breakfast", description: "Final day networking breakfast" },

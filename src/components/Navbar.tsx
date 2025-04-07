@@ -24,7 +24,9 @@ const Navbar = () => {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-8 py-4",
-        isScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : "bg-transparent"
+        isScrolled
+          ? "bg-white/80 backdrop-blur-lg shadow-sm"
+          : "bg-transparent",
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -39,7 +41,7 @@ const Navbar = () => {
           <a href="#about" className="bitcoin-link">
             About
           </a>
-          <a href="#speakers" className="bitcoin-link">
+          <a href="#sponsors" className="bitcoin-link">
             Sponsors
           </a>
           <a href="#venue" className="bitcoin-link">

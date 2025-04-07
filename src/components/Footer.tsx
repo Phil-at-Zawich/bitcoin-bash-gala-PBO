@@ -20,10 +20,10 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#speakers"
+                  href="#sponsors"
                   className="text-gray-400 hover:text-bitcoin transition-colors"
                 >
-                  Speakers
+                  Sponsors
                 </a>
               </li>
               <li>
@@ -59,7 +59,7 @@ const Footer = () => {
               <li>
                 <span className="block">Email:</span>
                 <a
-                  href="mailto:info@bitcoinsummit.com"
+                  href="mailto:phil@asymkey.com"
                   className="text-bitcoin hover:underline"
                 >
                   info@bitcoinsummit.com
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500">
-          <p>&copy; 2024 Bitcoin Meetup Day. All rights reserved.</p>
+          <p>&copy; 2025 Asymkey sàrl. All rights reserved.</p>
         </div>
       </div>
     </footer>
