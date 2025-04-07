@@ -105,7 +105,9 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
 
       <p className="text-center text-sm text-gray-500">
         Crypto payment accepted, please contact{" "}
-        <a href="mailto:phil@asymkey.com">info@bitcoinmeetupday.com</a>
+        <a href="mailto:phil@asymkey.com" className="text-bitcoin">
+          info@bitcoinmeetupday.com
+        </a>
       </p>
 
       <p className="text-center text-sm text-gray-500 mt-4">
