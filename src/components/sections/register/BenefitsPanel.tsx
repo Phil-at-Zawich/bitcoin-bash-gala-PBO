@@ -10,6 +10,14 @@ import {
   Award,
   Target,
 } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const BenefitsPanel: React.FC = () => {
   return (
@@ -81,17 +89,55 @@ const BenefitsPanel: React.FC = () => {
             </li>
           </ul>
 
-          <div className="p-4 border border-bitcoin/20 rounded-lg bg-bitcoin/5">
-            <p className="text-sm text-gray-700 space-y-2">
-              <strong className="block">Available Tickets:</strong>
-              <span className="block">• Lunch Only: $200 (10 spots)</span>
-              <span className="block">
-                • Evening Party: $100-$150 (50 spots)
-              </span>
-              <span className="block">
-                • Reserved Table: $2,000 (10 available)
-              </span>
-            </p>
+          <div className="border border-bitcoin/20 rounded-lg bg-bitcoin/5 overflow-hidden">
+            <div className="p-3 bg-bitcoin/10 border-b border-bitcoin/20">
+              <strong className="text-sm">Available Tickets</strong>
+            </div>
+            <div className="p-1">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Ticket Type</TableHead>
+                    <TableHead>HoW3 Members</TableHead>
+                    <TableHead>Non-Members</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">
+                      Lunch
+                      <div className="text-xs text-gray-500">
+                        (includes Evening Party Entry)
+                      </div>
+                    </TableCell>
+                    <TableCell>200,00 €</TableCell>
+                    <TableCell>280,00 €</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">
+                      Evening Party
+                      <div className="text-xs text-gray-500">
+                        (includes 2 free drinks)
+                      </div>
+                    </TableCell>
+                    <TableCell>130,00 €</TableCell>
+                    <TableCell>200,00 €</TableCell>
+                  </TableRow>
+                  {/* <TableRow>
+                    <TableCell className="font-medium">
+                      Evening Party (Non-Member)
+                    </TableCell>
+                    <TableCell>$150</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">
+                      Reserved Table (Sponsor)
+                    </TableCell>
+                    <TableCell>$2,000</TableCell>
+                  </TableRow> */}
+                </TableBody>
+              </Table>
+            </div>
           </div>
         </TabsContent>
 
@@ -149,22 +195,43 @@ const BenefitsPanel: React.FC = () => {
             </li>
           </ul>
 
-          <div className="p-4 border border-bitcoin/20 rounded-lg bg-bitcoin/5">
-            <p className="text-sm text-gray-700 space-y-2">
-              <strong className="block">Sponsorship Opportunities:</strong>
-              <span className="block">
-                • Platinum Sponsor: Premium placement and maximum visibility
-              </span>
-              <span className="block">
-                • Gold Sponsor: Enhanced brand presence
-              </span>
-              <span className="block">
-                • Silver Sponsor: Standard visibility package
-              </span>
-              <span className="block text-xs mt-2">
+          <div className="border border-bitcoin/20 rounded-lg bg-bitcoin/5 overflow-hidden">
+            <div className="p-3 bg-bitcoin/10 border-b border-bitcoin/20">
+              <strong className="text-sm">Sponsorship Opportunities</strong>
+            </div>
+            <div className="p-1">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Level</TableHead>
+                    <TableHead>Benefits</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">
+                      Platinum Sponsor
+                    </TableCell>
+                    <TableCell>
+                      Premium placement and maximum visibility
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Gold Sponsor</TableCell>
+                    <TableCell>Enhanced brand presence</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">
+                      Silver Sponsor
+                    </TableCell>
+                    <TableCell>Standard visibility package</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <div className="px-4 py-2 text-xs text-gray-500">
                 Contact us for detailed sponsorship packages and pricing
-              </span>
-            </p>
+              </div>
+            </div>
           </div>
         </TabsContent>
       </Tabs>

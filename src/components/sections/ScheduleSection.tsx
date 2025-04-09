@@ -9,12 +9,14 @@ const ScheduleSection = () => {
       {
         time: "12:00 - 14:00",
         title: "Lunch",
-        description: "Welcome lunch",
+        description: `The restaurant Le Plëss in the 5* Hotel Place d'Armes is reserved exclusively for Bitcoin Meetup Day attendees.
+          There will be a glass of champagne offered on arrival followed by a 3-course lunch.`,
       },
       {
         time: "18:00 - 00:00",
-        title: "Party time",
-        description: "Welcome reception",
+        title: "Evening party",
+        description: `The Bar Le 18 in the 5* Hotel Place d’Armes is reserved exclusively for Bitcoin Meetup Day attendees.
+          There will be a finger food dinner party between 7pm and 9pm, including the famous Satoshi and Nakamoto cocktails.`,
       },
       // {
       //   time: "09:30 - 10:30",
@@ -104,12 +106,14 @@ const ScheduleSection = () => {
                           </div>
                         </div>
                         <div className="md:w-2/6">
-                          <h3 className="text-xl font-semibold group-hover:text-bitcoin transition-colors">
+                          <h3 className="text-xl font-semibold">
                             {event.title}
                           </h3>
                         </div>
                         <div className="md:w-3/6">
-                          <p className="text-gray-600">{event.description}</p>
+                          <p className="text-gray-600 whitespace-pre-line">
+                            {event.description}
+                          </p>
                         </div>
                       </div>
                     </div>

@@ -7,6 +7,7 @@ import SponsorsSection from "@/components/sections/SponsorsSection";
 import VenueSection from "@/components/sections/VenueSection";
 import ScheduleSection from "@/components/sections/ScheduleSection";
 import RegisterSection from "@/components/sections/RegisterSection";
+import OrganizersSection from "@/components/sections/OrganizersSection";
 
 const Index = () => {
   useEffect(() => {
@@ -60,7 +61,7 @@ const Index = () => {
       <ScheduleSection />
       <SponsorsSection />
       <RegisterSection />
-
+      <OrganizersSection />
       <Footer />
     </main>
   );

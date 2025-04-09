@@ -59,10 +59,10 @@ const Footer = () => {
               <li>
                 <span className="block">Email:</span>
                 <a
-                  href="mailto:phil@asymkey.com"
+                  href="mailto:info@bitcoinmeetupday.com"
                   className="text-bitcoin hover:underline"
                 >
-                  info@bitcoinsummit.com
+                  info@bitcoinmeetupday.com
                 </a>
               </li>
               {/* <li>

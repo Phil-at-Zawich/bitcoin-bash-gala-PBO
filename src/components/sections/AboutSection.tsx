@@ -15,7 +15,7 @@ const AboutSection = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const fadeElements = document.querySelectorAll(".fade-in-section");
@@ -52,7 +52,7 @@ const AboutSection = () => {
                 5 <Star className="h-4 w-4 text-gold mx-0.5 fill-gold" />
               </span>{" "}
               Hotel Le Place d'Armes in the heart of the historic city center,
-              this invitation-only event creates the perfect atmosphere for
+              this exceptional lunch event creates the perfect atmosphere for
               meaningful connections and groundbreaking collaborations.
             </p>
 

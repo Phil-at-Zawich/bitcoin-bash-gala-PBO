@@ -16,6 +16,7 @@ const HeroSection = () => {
         }}
       >
         <source src="/hero.mp4" type="video/mp4" />
+        <source src="/hero.webm" type="video/webm" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10"></div>
