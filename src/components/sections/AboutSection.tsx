@@ -85,7 +85,7 @@ const AboutSection = () => {
                   Exceptional Lunch
                 </h3>
                 <p className="text-gray-600">
-                  Gourmet buffet featuring exceptional Krug Champagne cuvées
+                  Gourmet 3-course lunch with an apéritif offered.
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ const AboutSection = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Evening Party</h3>
                 <p className="text-gray-600">
-                  Gourmet 3-course lunch with an apéritif offered.
+                  Gourmet buffet featuring exceptional Krug Champagne cuvées.
                 </p>
               </div>
             </div>
