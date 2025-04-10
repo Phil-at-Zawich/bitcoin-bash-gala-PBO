@@ -81,7 +81,9 @@ const AboutSection = () => {
                 <div className="rounded-full bg-bitcoin/10 w-12 h-12 flex items-center justify-center mb-4">
                   <Utensils className="h-6 w-6 text-bitcoin" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Premium Buffet</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Exceptional Lunch
+                </h3>
                 <p className="text-gray-600">
                   Gourmet buffet featuring exceptional Krug Champagne cuvées
                 </p>
@@ -91,11 +93,9 @@ const AboutSection = () => {
                 <div className="rounded-full bg-bitcoin/10 w-12 h-12 flex items-center justify-center mb-4">
                   <Utensils className="h-6 w-6 text-bitcoin" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Exceptional Lunch
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Evening Party</h3>
                 <p className="text-gray-600">
-                  Gourmet buffet featuring exceptional Krug Champagne cuvées
+                  Gourmet 3-course lunch with an apéritif offered.
                 </p>
               </div>
             </div>
