@@ -95,46 +95,41 @@ const BenefitsPanel: React.FC = () => {
             </div>
             <div className="p-1">
               <Table>
-                <TableHeader>
+                {/* <TableHeader>
                   <TableRow>
                     <TableHead>Ticket Type</TableHead>
-                    <TableHead>HoW3 Members</TableHead>
-                    <TableHead>Non-Members</TableHead>
+                    <TableHead>Price</TableHead>
                   </TableRow>
-                </TableHeader>
+                </TableHeader> */}
                 <TableBody>
                   <TableRow>
                     <TableCell className="font-medium">
-                      Lunch
+                      Lunch & Evening Party
                       <div className="text-xs text-gray-500">
-                        (includes Evening Party Entry)
+                        (includes free aperitif)
                       </div>
                     </TableCell>
-                    <TableCell>200,00 €</TableCell>
-                    <TableCell>280,00 €</TableCell>
+                    <TableCell className="whitespace-nowrap">280 €</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">
-                      Evening Party
+                      Evening Party Only
                       <div className="text-xs text-gray-500">
-                        (includes 2 free drinks)
+                        (includes 2 free cocktails)
                       </div>
                     </TableCell>
-                    <TableCell>130,00 €</TableCell>
-                    <TableCell>200,00 €</TableCell>
-                  </TableRow>
-                  {/* <TableRow>
-                    <TableCell className="font-medium">
-                      Evening Party (Non-Member)
-                    </TableCell>
-                    <TableCell>$150</TableCell>
+                    <TableCell className="whitespace-nowrap">200 €</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">
-                      Reserved Table (Sponsor)
+                      Evening Party Reserved Table (4 people)
+                      <div className="text-xs text-gray-500">
+                        (includes lunch for 2 and in the evening free Krug
+                        champagne & cocktails - select for more details)
+                      </div>
                     </TableCell>
-                    <TableCell>$2,000</TableCell>
-                  </TableRow> */}
+                    <TableCell className="whitespace-nowrap">2.000 €</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </div>
